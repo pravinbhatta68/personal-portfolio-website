@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Section, SectionHeading } from "@/components/section";
@@ -21,11 +22,24 @@ export default function ContactPage() {
   return (
     <>
       <Section className="pt-24">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Book a premium AI marketing consultation"
-          text="Tell me about your business goals, current marketing systems, and where you want AI to create momentum."
-        />
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <SectionHeading
+            align="left"
+            eyebrow="Contact"
+            title="Book a premium AI marketing consultation"
+            text="Tell me about your business goals, current marketing systems, and where you want AI to create momentum."
+          />
+          <GlassCard className="colorful-panel overflow-hidden p-4">
+            <Image
+              src="/Book a premium AI marketing consultation.jpg"
+              alt="AI marketing consultation roadmap dashboard"
+              width={900}
+              height={520}
+              className="aspect-[16/10] w-full rounded-2xl object-cover"
+              priority
+            />
+          </GlassCard>
+        </div>
       </Section>
       <Section className="grid gap-6 pt-0 lg:grid-cols-[1fr_0.72fr]">
         <GlassCard className="p-6 sm:p-8">

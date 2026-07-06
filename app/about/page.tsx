@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Award, BriefcaseBusiness, CircleHelp, Medal, Sparkles } from "lucide-react";
 import { FadeIn } from "@/components/motion";
 import { Section, SectionHeading } from "@/components/section";
@@ -22,11 +23,24 @@ export default function AboutPage() {
   return (
     <>
       <Section className="pt-24">
-        <SectionHeading
-          eyebrow="About"
-          title="Marketing strategy meets intelligent AI execution"
-          text={`${brand.owner} helps businesses adopt AI in ways that improve content, campaigns, operations, and growth without losing the human strategy that makes brands memorable.`}
-        />
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <SectionHeading
+            align="left"
+            eyebrow="About"
+            title="Marketing strategy meets intelligent AI execution"
+            text={`${brand.owner} helps businesses adopt AI in ways that improve content, campaigns, operations, and growth without losing the human strategy that makes brands memorable.`}
+          />
+          <GlassCard className="colorful-panel overflow-hidden p-4">
+            <Image
+              src="/Marketing strategy meets intelligent AI execution.webp"
+              alt="Digital transformation marketing strategy dashboard"
+              width={900}
+              height={520}
+              className="aspect-[16/10] w-full rounded-2xl object-cover"
+              priority
+            />
+          </GlassCard>
+        </div>
       </Section>
 
       <Section className="grid gap-6 pt-0 lg:grid-cols-3">

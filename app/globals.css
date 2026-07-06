@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: 230 31% 5%;
+  --background: 228 56% 6%;
   --foreground: 0 0% 98%;
   --muted: 229 20% 16%;
   --border: 0 0% 100%;
   --accent: 190 100% 68%;
   --accent-2: 258 100% 76%;
+  --font-geist-sans: "Segoe UI Variable Display", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Bahnschrift", "Aptos Display", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
 }
 
 * {
@@ -22,9 +24,13 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  font-feature-settings: "ss01", "cv05", "cv11";
   background:
-    radial-gradient(circle at top left, rgba(91, 219, 255, 0.16), transparent 30rem),
-    radial-gradient(circle at 80% 15%, rgba(155, 124, 255, 0.15), transparent 28rem),
+    radial-gradient(circle at 8% 8%, rgba(91, 219, 255, 0.3), transparent 28rem),
+    radial-gradient(circle at 82% 12%, rgba(244, 114, 182, 0.2), transparent 30rem),
+    radial-gradient(circle at 18% 62%, rgba(16, 185, 129, 0.2), transparent 28rem),
+    radial-gradient(circle at 92% 76%, rgba(59, 130, 246, 0.24), transparent 30rem),
+    radial-gradient(circle at 50% 48%, rgba(250, 204, 21, 0.08), transparent 28rem),
     hsl(var(--background));
   color: hsl(var(--foreground));
 }
@@ -36,6 +42,17 @@ body {
 
 .page-shell {
   position: relative;
+}
+
+.page-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(91, 219, 255, 0.12), transparent 28%, rgba(244, 114, 182, 0.1) 48%, rgba(155, 124, 255, 0.12) 62%, transparent 80%),
+    linear-gradient(35deg, transparent, rgba(16, 185, 129, 0.12), transparent);
 }
 
 .page-shell::before {
@@ -51,14 +68,57 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff, hsl(var(--accent)), hsl(var(--accent-2)), #74f4b1);
+  background: linear-gradient(90deg, #ffffff, hsl(var(--accent)), #60a5fa, #f472b6, hsl(var(--accent-2)), #74f4b1, #fde047);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), var(--font-geist-sans), system-ui, sans-serif;
+  letter-spacing: 0;
 }
 
 .skeleton {
   background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.14), rgba(255,255,255,0.06));
   background-size: 200% 100%;
   animation: shimmer 2.2s linear infinite;
+}
+
+.reveal-section {
+  view-timeline-name: --section-reveal;
+  animation: section-rise both;
+  animation-timeline: view();
+  animation-range: entry 8% cover 28%;
+}
+
+.colorful-panel {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(91, 219, 255, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 28%, rgba(244, 114, 182, 0.16), transparent 28%),
+    radial-gradient(circle at 52% 102%, rgba(16, 185, 129, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035)),
+    rgba(255, 255, 255, 0.065);
+}
+
+@keyframes section-rise {
+  from {
+    opacity: 0.25;
+    transform: translateY(42px) scale(0.985);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    animation: none;
+  }
 }

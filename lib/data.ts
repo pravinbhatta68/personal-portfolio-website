@@ -169,7 +169,7 @@ export const blogPosts = [
     title: "How to Build an AI Marketing Roadmap for Growing Businesses",
     category: "AI Marketing",
     tags: ["Strategy", "Automation", "Growth"],
-    image: "/images/blog-ai-roadmap.png",
+    image: "/How to Build an AI Marketing Roadmap for Growing Businesses.webp",
     excerpt:
       "A practical way to decide where AI belongs in your marketing stack, from research to reporting.",
     date: "2026-05-18",
@@ -180,7 +180,7 @@ export const blogPosts = [
     title: "ChatGPT Prompts That Improve Content Strategy",
     category: "Prompt Engineering",
     tags: ["ChatGPT", "Content", "Prompts"],
-    image: "/images/blog-prompts.png",
+    image: "/ChatGPT Prompts That Improve Content Strategy.jpeg",
     excerpt:
       "Use reusable prompt systems to research audiences, create briefs, and produce stronger campaign ideas.",
     date: "2026-04-29",
@@ -191,7 +191,7 @@ export const blogPosts = [
     title: "Marketing Automation Workflows That Save Time Every Week",
     category: "Marketing Automation",
     tags: ["Automation", "CRM", "Workflows"],
-    image: "/images/blog-automation.png",
+    image: "/Marketing Automation Workflows That Save Time Every Week.webp",
     excerpt:
       "High-leverage automations for lead capture, follow-up, reporting, and content distribution.",
     date: "2026-04-10",
@@ -202,7 +202,7 @@ export const blogPosts = [
     title: "SEO in the Age of AI Search",
     category: "SEO",
     tags: ["SEO", "AI Tools", "Search"],
-    image: "/images/blog-seo.png",
+    image: "/SEO in the Age of AI Search.png",
     excerpt:
       "How brands can build topical authority while adapting to AI-assisted discovery and search behavior.",
     date: "2026-03-22",
@@ -213,7 +213,7 @@ export const blogPosts = [
     title: "Digital Transformation for Local Businesses",
     category: "Digital Transformation",
     tags: ["AI Tools", "Business", "Nepal"],
-    image: "/images/blog-transformation.png",
+    image: "/Digital Transformation for Local Businesses.avif",
     excerpt:
       "A simple modernization path for businesses that want better marketing, operations, and customer experience.",
     date: "2026-03-02",
@@ -224,7 +224,7 @@ export const blogPosts = [
     title: "Choosing the Right AI Tools for Your Marketing Stack",
     category: "AI Tools",
     tags: ["Tools", "Stack", "Consulting"],
-    image: "/images/blog-tools.png",
+    image: "/Choosing the Right AI Tools for Your Marketing Stack.jpeg",
     excerpt:
       "A decision framework for selecting AI tools that fit your workflow instead of adding unnecessary complexity.",
     date: "2026-02-16",

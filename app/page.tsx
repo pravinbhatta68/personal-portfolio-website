@@ -54,7 +54,20 @@ export default function HomePage() {
 
       <Section id="about" className="grid gap-10 lg:grid-cols-[0.82fr_1fr]">
         <FadeIn>
-          <Image src="/images/pravin-profile.png" alt="Professional portrait placeholder for Pravin Bhatta" width={720} height={760} className="rounded-[2rem] border border-white/10 object-cover shadow-premium" />
+          <div className="colorful-panel relative overflow-hidden rounded-[2rem] border border-white/10 p-4 shadow-premium">
+            <Image
+              src="/profile picture.jpg"
+              alt="Pravin Bhatta, AI Marketing Expert"
+              width={720}
+              height={760}
+              className="aspect-[0.95] w-full rounded-[1.5rem] object-cover object-top"
+              priority
+            />
+            <div className="absolute bottom-7 left-7 rounded-2xl border border-white/12 bg-black/50 px-5 py-3 backdrop-blur-xl">
+              <p className="font-semibold text-white">Pravin Bhatta</p>
+              <p className="text-sm text-accent">AI Marketing Expert</p>
+            </div>
+          </div>
         </FadeIn>
         <FadeIn delay={0.1} className="self-center">
           <SectionHeading align="left" eyebrow="About" title="Strategic AI marketing for businesses ready to move faster." />

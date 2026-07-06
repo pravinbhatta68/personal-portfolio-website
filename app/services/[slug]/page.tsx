@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/section";
@@ -31,14 +32,26 @@ export default async function ServiceDetailPage({ params }: Props) {
   return (
     <>
       <Section className="pt-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-2xl border border-accent/25 bg-accent/10 text-accent">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div>
+          <div className="mb-6 grid h-16 w-16 place-items-center rounded-2xl border border-accent/25 bg-accent/10 text-accent">
             <service.icon size={30} />
           </div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Service</p>
           <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl">{service.title}</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/65">{service.description}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">{service.description}</p>
           <LinkButton href="/contact" size="lg" className="mt-8">Book Consultation</LinkButton>
+          </div>
+          <GlassCard className="colorful-panel overflow-hidden p-4">
+            <Image
+              src="/images/ai-dashboard.png"
+              alt={`${service.title} digital marketing dashboard`}
+              width={900}
+              height={620}
+              className="aspect-[16/10] w-full rounded-2xl object-cover"
+              priority
+            />
+          </GlassCard>
         </div>
       </Section>
 
